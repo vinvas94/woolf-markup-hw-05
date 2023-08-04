@@ -462,6 +462,7 @@ body {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   color: var(--white-background);
   outline: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 }
 .input-footer-form::placeholder {
   font-family: var(--primary-font);
@@ -731,7 +732,7 @@ body {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--form-label);
+  color: var(--icon-customers);
   margin-bottom: 4px;
 }
 
@@ -798,7 +799,7 @@ body {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--form-label);
+  color: var(--icon-customers);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -809,6 +810,7 @@ body {
   fill: transparent;
   width: 16px;
   height: 16px;
+  margin-right: 8px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -817,7 +819,7 @@ body {
 }
 
 .input-check:checked + .check-text span {
-  background-color: var(--primary-brand);
+  background-color: var(--pressed-state);
   border: none;
   fill: var(--light-background-color);
 }
@@ -827,15 +829,15 @@ body {
 }
 
 .privacy-link {
-  color: var(--pressed-state);
+  color: var(--primary-brand);
   text-decoration-line: underline;
 }
 
 .modal-btn {
-  display: flex;
+  display: block;
   font-family: var(--primary-font);
   font-weight: 500;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
   font-size: 16px;
   line-height: 1.5;
@@ -845,10 +847,9 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background: var(--primary-brand);
   border-radius: 4px;
-  border-color: transparent;
-  align-items: center;
-  justify-content: center;
+  border: none;
   margin: 0 auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ===================MODAL=============== */
