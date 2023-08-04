@@ -453,9 +453,11 @@ body {
   height: 40px;
   font-family: var(--primary-font);
   font-size: 12px;
-  padding: 8px 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
   border-radius: 4px;
-  background-color: var(--dark-color);
+  background-color: transparent;
   border: 1px solid var(--white-background);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   color: var(--white-background);
@@ -472,7 +474,7 @@ body {
 .btn-footer-form {
   font-family: var(--primary-font);
   font-weight: 500;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   font-size: 16px;
   line-height: 1.5;
@@ -485,10 +487,11 @@ body {
   align-items: center;
   gap: 16px;
   border-radius: 4px;
-  border-color: transparent;
+  border: none;
 }
 .icon-footer-form {
   fill: var(--white-background);
+  margin-left: 16px;
 }
 
 /* ======================/ FOOTER ==================== */
@@ -655,6 +658,7 @@ body {
 }
 
 .modal {
+  padding: 72px 24px 24px;
   width: 408px;
   min-height: 584px;
   background: var(--white-modal);
@@ -664,7 +668,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 24px;
+
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -710,7 +714,10 @@ body {
   letter-spacing: 0.02em;
   color: var(--dark-color);
   margin-bottom: 16px;
-  padding-top: 48px;
+}
+
+.modal-container {
+  margin-bottom: 8px;
 }
 
 .modal-form {
@@ -719,10 +726,10 @@ body {
 }
 
 .input-text {
-  display: inline-block;
+  display: block;
   font-family: var(--primary-font);
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--form-label);
   margin-bottom: 4px;
@@ -730,7 +737,6 @@ body {
 
 .input-wrap {
   position: relative;
-  margin-bottom: 8px;
 }
 
 .modal-input {
@@ -738,9 +744,13 @@ body {
   height: 40px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  background-color: transparent;
   padding-left: 38px;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus {
+  border-color: var(--primary-brand);
 }
 
 .modal-icon {
@@ -751,27 +761,27 @@ body {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-input:focus {
-  border-color: var(--primary-brand);
-}
-
 .modal-input:focus + .modal-icon {
   fill: var(--primary-brand);
 }
 
+.moda-field-textarea {
+  margin-bottom: 16px;
+}
 .modal-textarea {
+  width: 100%;
   height: 120px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  padding-left: 16px;
-  padding-top: 8px;
+  padding: 8px 16px;
   outline: transparent;
   font-family: var(--primary-font);
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
-  color: var(--dark-color);
+  color: rgba(46, 47, 66, 0.4);
   resize: none;
+  background-color: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -779,29 +789,31 @@ body {
   border-color: var(--primary-brand);
 }
 
+.modal-field-checkbox {
+  margin-bottom: 24px;
+}
+
 .check-text {
-  display: flex;
   font-family: var(--primary-font);
-  align-items: center;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--form-label);
-  margin-top: 16px;
-  margin-bottom: 24px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.check-text span {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  border: 1.25px solid #2e2f42;
-  border-radius: 2px;
-  display: flex;
+.check-span {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   fill: transparent;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-check:checked + .check-text span {
@@ -812,14 +824,6 @@ body {
 
 .input-check:focus + .check-text span {
   border-color: var(--primary-brand);
-}
-
-.privacy-text {
-  font-family: var(--primary-font);
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.04em;
-  color: #757575;
 }
 
 .privacy-link {
