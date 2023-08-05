@@ -11,7 +11,6 @@
   --hover-footer: #31d0aa;
   --icon-customers: #8e8f99;
   --white-modal: #fcfcfc;
-  --form-label: #8e9699;
 }
 
 h1,
@@ -492,7 +491,6 @@ body {
 }
 .icon-footer-form {
   fill: var(--white-background);
-  margin-left: 16px;
 }
 
 /* ======================/ FOOTER ==================== */
